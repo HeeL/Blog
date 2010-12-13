@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'capistrano'
 
 group :development, :test do
+  gem 'sqlite3-ruby'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'cucumber-rails'
