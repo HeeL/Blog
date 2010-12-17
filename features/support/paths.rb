@@ -8,6 +8,12 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /the new comment page for the post/
+      new_post_comment_path(Post.last)    
+  
+    when /the post page/
+      post_path(Post.last)      
+      
     when /the home\s?page/
       '/'
       when /the new post page/

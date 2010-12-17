@@ -1,0 +1,21 @@
+<h1>Rails3 Blog</h1>
+
+<%= link_to "Create a Post", new_post_path, :style => 'color: #ff0000 !important' %>
+<br/><br/>
+
+<%  @posts.each do |post| %>
+<div style="padding-top: 15px;">
+
+  <div style="width: 200px; float: left;">
+    <%= link_to post.title, post %>
+  </div>
+
+  <%= link_to "Edit", [:edit, post] %>
+  <%= link_to "Delete", post, :method => :delete,
+    :confirm => 'Are you sure?', :style=> 'padding-left: 20px' %>
+  <br/>
+
+</div>
+<%end%>
+
+

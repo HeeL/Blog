@@ -5,12 +5,11 @@
   <%=  @post.body%>
 </div>
 
-<%= error_messages_for :comments %>
+<%= error_messages_for :comment %>
 
-<%= form_for [@post, Comment.new] do |form| %>
-	Name: <%= form.text_field :name %><br/>
-	E-mail: <%= form.text_field :email %><br/>
-	
+
+<%=  form_for [@post, Comment.new] do |form| %>
+	Name: <%= form.text_field :name %><br/><br/>
 	Text:
 	<br/>
 	<%= form.text_area :text, "rows"=>"8" %><br/>
@@ -21,18 +20,12 @@
 
 <% if @post.comments.count > 0%>
 
-	<h1 style="margin-top: 40px">Comments:</h1>
+	Comments:
 	
 	<% @post.comments.each do |comment|%>
-	<div style="margin: 20px">
 		<b><%=comment.name%></b>:
 		<div><%=comment.text%></div>
 		<small><%=comment.created_at%></small>
-		 <%= link_to "Delete", [@post, comment], :method => :delete,
-    :confirm => 'Are you out of your mind?', :style=> 'margin-left: 20px' %>
- 	
- 	</div>
- 
 	<% end %>
 
 <%end%>
