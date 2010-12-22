@@ -22,7 +22,9 @@ end
 
 def show
   @post = Post.find_by_id(params[:id])
-  respond_with @posts
+  @comment = Comment.new
+  
+  respond_with @post
 end
 
 def update

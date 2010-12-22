@@ -5,18 +5,8 @@
   <%=  @post.body%>
 </div>
 
-<%= error_messages_for :comments %>
 
-<%= form_for [@post, Comment.new] do |form| %>
-	Name: <%= form.text_field :name %><br/>
-	E-mail: <%= form.text_field :email %><br/>
-	
-	Text:
-	<br/>
-	<%= form.text_area :text, "rows"=>"8" %><br/>
-	<%= form.submit %>
-<%end%>
-
+<%= render :partial => 'posts/cmt_form' %>
 
 
 <% if @post.comments.count > 0%>
