@@ -1,0 +1,12 @@
+
+<%= error_messages_for :comment %>
+
+<%= form_for [@post, @comment] do |form| %>
+	Name: <%= form.text_field :name %><br/>
+	E-mail: <%= form.text_field :email %><br/>
+	
+	Text:
+	<br/>
+	<%= form.text_area :text, "rows"=>"8" %><br/>
+	<%= form.submit %>
+<%end%>

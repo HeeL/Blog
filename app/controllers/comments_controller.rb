@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
-  
+    
   def create
-    post = Post.find_by_id(params[:post_id])
-    if post.comments.create(params[:comment])
-      redirect_to post
+    @post = Post.find_by_id(params[:post_id])
+    @comment = @post.comments.create(params[:comment])
+    
+    if @comment.errors.empty?
+      redirect_to :controller => 'posts', :action => 'show', :id => params[:post_id]
     else
-      render :action => 'show'
+      render :action => 'posts/show'
     end    
   end
   
