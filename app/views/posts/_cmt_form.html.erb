@@ -1,6 +1,8 @@
 
 <%= error_messages_for :comment %>
 
+<h2>Add a comment</h2>
+
 <%= form_for [@post, @comment] do |form| %>
 	Name: <%= form.text_field :name %><br/>
 	E-mail: <%= form.text_field :email %><br/>
