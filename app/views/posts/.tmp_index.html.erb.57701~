@@ -1,4 +1,4 @@
-<h1>List of posts</h1>
+<h1>Rails3 Blog</h1>
 
 <%= link_to "Create a Post", new_post_path, :style => 'color: #ff0000 !important' %>
 <br/><br/>

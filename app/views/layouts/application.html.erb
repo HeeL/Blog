@@ -1,14 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <title>Blog</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%#= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
+
+<div id="wrap">
+<div id="header">
+	<h1>Rails3Blog</h1>
+</div>
+
+<div id="nav">
+	<ul>
+		<li><%= link_to 'Posts', posts_path %></li>
+	</ul>
+</div>
+
+<div id="content">
+
 <%= yield %>
 
+</div>
+</div>
+<div id="footer">
+&copy; 2010 [<a href="https://github.com/HeeL/Blog" target="_blank">Open Source</a>]
+</div>
 </body>
 </html>
