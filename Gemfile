@@ -12,10 +12,11 @@ gem 'rails', '3.0.3'
 # Deploy with Capistrano
 gem 'capistrano'
 
+gem "devise", :git => "http://github.com/plataformatec/devise.git" 
+
 group :development, :test do
 #  gem 'sqlite3-ruby'
 #  gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem "devise", :git => "http://github.com/plataformatec/devise.git" 
   gem 'mysql2'
   gem 'capybara'
   gem 'database_cleaner'
