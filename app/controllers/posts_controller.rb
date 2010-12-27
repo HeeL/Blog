@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_filter :signed_in, :only => [:create, :new]
   before_filter :check_own, :only => [:update, :edit, :destroy]  
   before_filter :add_params, :only => [:update, :create]  
+  before_filter :find_post, :only => :show
   
 def find_post
   @post = Post.find_by_id(params[:id])
