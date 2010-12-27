@@ -19,7 +19,7 @@ end
 
 def check_own
   find_post
-  if @post.user.id != current_user.id
+  if !user_signed_in? || @post.user.id != current_user.id
     redirect_to posts_path
     return    
   end

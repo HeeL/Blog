@@ -1,7 +1,9 @@
 <h1>List of posts</h1>
 
-<%= link_to "Create a Post", new_post_path, :style => 'color: #ff0000 !important' %>
-<br/><br/>
+<% if user_signed_in? %>
+	<%= link_to "Create a Post", new_post_path, :style => 'color: #ff0000 !important' %>
+	<br/><br/>
+<% end %>
 
 <%  @posts.each do |post| %>
 <div style="padding-top: 15px;">
@@ -10,9 +12,10 @@
     <%= link_to post.title, post %>
   </div>
 
-  <%= link_to "Edit", [:edit, post] %>
-  <%= link_to "Delete",  post, :method => :delete,
-    :confirm => 'Are you sure?', :style=> 'padding-left: 20px' %>
+<%= check_own(post) ? (link_to "Edit", [:edit, post]) : '' %>
+
+  <%= check_own(post) ? (link_to "Delete",  post, :method => :delete,
+    :confirm => 'Are you sure?', :style=> 'padding-left: 20px') : '' %>
   <br/>
 
 </div>

@@ -18,10 +18,18 @@ class CommentsController < ApplicationController
       render :action => 'posts/show'
     end    
   end
+ 
+  def check_own(post)
+    return user_signed_in? && post.user.id == current_user.id
+  end
   
   def destroy
-    comment = Comment.find_by_id(params[:id])
-    comment.destroy
+    @post = Post.find_by_id(params[:post_id])
+    if(check_own(@post))
+      comment = Comment.find_by_id(params[:id])
+      comment.destroy
+    end
+    
     to_post
   end
   

@@ -20,8 +20,8 @@
 			<b><%=comment.name%></b>:
 			<div><%=comment.text%></div>
 			<small><%=comment.created_at%></small>
-			 <%= link_to "Delete", [@post, comment], :method => :delete,
-	    :confirm => 'Are you out of your mind?', :style=> 'margin-left: 20px' %>
+			 <%= check_own(@post) ? (link_to "Delete", [@post, comment], :method => :delete,
+	    :confirm => 'Are you out of your mind?', :style=> 'margin-left: 20px') : '' %>
 	 	
 	 	</div>
  
