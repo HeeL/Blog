@@ -7,7 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
   <%= stylesheet_link_tag :all %>
-  <%#= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -25,6 +25,20 @@
 </div>
 
 <div id="content">
+
+
+<div style=" float: right">
+	<% if user_signed_in? %>
+	  Signed in as <b><%= current_user.username %></b>. Not you?
+	  <%= link_to "Sign out", destroy_user_session_path %>
+	<% else %>
+	  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+	<% end %>
+</div>
+
+<% if flash[:notice] %>
+    <div style="border: 1px dashed green; padding: 20px; width: 300px"><%= flash[:notice] %></div>
+<% end %>
 
 <%= yield %>
 
