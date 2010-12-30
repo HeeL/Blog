@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  respond_to :html, :atom
+  respond_to :html, :atom, :rss
   before_filter :signed_in, :only => [:create, :new]
   before_filter :check_own, :only => [:update, :edit, :destroy]  
   before_filter :add_params, :only => [:update, :create]  

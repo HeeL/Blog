@@ -1,9 +1,20 @@
 <h1>List of posts</h1>
+<div style="float: right">
+	<%= link_to image_tag("rss.gif", :alt => "RSS feed for posts"), posts_path(:format => :rss) %><br />
+	<%=link_to image_tag("atom.gif", :alt => "Atom feed for posts"), posts_path(:format => :atom) %>
+</div>
 
 <% if user_signed_in? %>
 	<%= link_to "Create a Post", new_post_path, :style => 'color: #ff0000 !important' %>
-	<br/><br/>
+<% else %>
+	Please,
+	<%= link_to "Sign up", new_user_registration_path, :style => 'color: #ff0000 !important'  %>
+	 or
+	<%= link_to "Sign in", new_user_session_path, :style => 'color: #ff0000 !important'  %>
+	to be able to write a post
 <% end %>
+<br/><br/>
+
 
 <%  @posts.each do |post| %>
 <div style="padding-top: 15px;">
