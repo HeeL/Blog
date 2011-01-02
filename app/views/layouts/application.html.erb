@@ -11,6 +11,7 @@
 
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
+  
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -18,7 +19,7 @@
 
 <div id="wrap">
 <div id="header">
-	<h1>Rails3Blog</h1>
+	<h1><%= link_to 'Rails3Blog', root_path %></h1>
 </div>
 
 <div id="nav">

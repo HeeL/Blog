@@ -1,5 +1,6 @@
 body                  {background-color:#ddd;font-family:Georgia,sans-serif;font-size:80%;}
 h1                    {font-size:19pt;}
+h1 a                  {color:#ffffff; text-decoration:none}
 h2                    {font-size:15pt;}
 
 div#wrap              {margin:auto;width:80%;background-color:#fff;padding:1em;border:5px solid #ccc;}

@@ -17,19 +17,19 @@
 
 
 <%  @posts.each do |post| %>
-<div style="padding-top: 15px;">
-
-  <div style="width: 200px; float: left;">
-    <%= link_to post.title, post %>
-  </div>
-
-<%= check_own(post) ? (link_to "Edit", [:edit, post]) : '' %>
-
-  <%= check_own(post) ? (link_to "Delete",  post, :method => :delete,
-    :confirm => 'Are you sure?', :style=> 'padding-left: 20px') : '' %>
-  <br/>
-
-</div>
+	<div id="p<%=post.id%>" style="padding-top: 15px;">
+	
+	  <div style="width: 200px; float: left;">
+	    <%= link_to post.title, post %>
+	  </div>
+	
+	<%= check_own(post) ? (link_to "Edit", [:edit, post]) : '' %>
+	
+	  <%= check_own(post) ? (link_to "Delete",  post, :method => :delete,
+	 :confirm => 'Are you sure?', :style => 'padding-left: 20px') : '' %>
+	  <br/>
+	
+	</div>
 <%end%>
 
 
